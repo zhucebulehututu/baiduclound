@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>百度网盘</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+
+  <div class="bg">
+    <div class="header">
+      <div class="logo"></div>
+      <ul class="function">
+        <li class="active">网盘</li>
+        <li>分享</li>
+        <li>更多</li>
+      </ul>
+      <div class="info">
+        <div class="customer">
+
+          <!-- 悬窗 -->
+          <div class="suspend-box">
+            <div class="box-head">
+              <i class="arrow-top"></i>
+              <div class="con-head">
+                <div class="head-cover">
+                  <div class="head-img"></div>
+                </div>
+                <span class="username">我是VIP</span>
+                <a href="javascript:;" class="vip-logo"></a>
+              </div>
+
+            </div>
+            <div class="box-nav">
+              <p class="vip-notice">超级会员尊享特权:<span class="purchase">开通超级会员</span></p>
+              <ul class="vip-privilege">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul class="box-info">
+                <li>个人资料</li>
+                <li>帮助中心</li>
+                <li>退出</li>
+              </ul>
+            </div>
+          </div>
+          <div class="head-photo"></div>
+          <span class="user-name">我是VIP</span>
+          <a href="javascript:;" class="vip"></a>
+          <a href="javascript:;" class="arrow"></a>
+
+        </div>
+        <div class="notice">
+          <a href="http://pan.baidu.com/download" class="download-link">客户端下载</a>
+          <ul class="system-info">
+            <li class="info-warn"></li>
+            <li class="feedback"></li>
+            <li class="theme"></li>
+          </ul>
+          <span class="vip-center">会员中心</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="main">
+      <div class="left">
+        <ul class="menu">
+          <li class="files">全部文件</li>
+          <li class="pictures">图片</li>
+          <li class="documents">文档</li>
+          <li class="videos">视频</li>
+          <li class="bts">种子</li>
+          <li class="musics">音乐</li>
+          <li class="others">其它</li>
+          <li class="myshare">我的分享</li>
+          <li class="recycled">回收站</li>
+        </ul>
+      </div>
+      <div class="right">
+        <div class="top">
+          <ul class="topleft">
+            <li class="upload active">上传
+              <ul class="upload-hover">
+                <li>上传文件</li>
+                <li>上传文件夹</li>
+              </ul>
+            </li>
+            <li class="newfile">新建文件夹</li>
+            <ul class="file-operate active">
+              <li class="share-file">分享</li>
+              <li class="download-file">下载</li>
+              <li class="delete-file">删除</li>
+              <li class="rename-file">重命名</li>
+              <li class="copy-file">复制到</li>
+              <li class="move-file">移动到</li>
+              <li class="tocloud">推送到云设备</li>
+            </ul>
+            <li class="download">离线下载</li>
+            <li class="mydevice">我的设备
+              <ul class="mydevice-hover">
+                <li>推送任务列表</li>
+                <li>添加设备</li>
+              </ul>
+            </li>
+          </ul>
+          <div class="topright">
+            <div class="search">
+              <input type="text" class="text" placeholder="搜索您的文件">
+              <span class="searchbtn"></span>
+            </div>
+            <a class="order"></a>
+            <a class="viewselect"></a>
+          </div>
+        </div>
+        <div class="dis-menu">
+          <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++- -->
+          <p class="left-dis">全部文件</p>
+          <p class="right-dis">已全部加载，共<span class="file-num"></span>个</p>
+        </div>
+        <div class="nav">
+          <div class="select-all">
+            <a class="checkbox"></a>
+            <span class="word">全选</span>
+          </div>
+        </div>
+        <div class="body">
+
+          <!-- <div class="file-box">
+            <div class="circle">√</div>
+            <div class="file"></div>
+            <p class="file-name">新建文件夹</p>
+            <div class="text-file">
+              <input type="text" class="rename-text" value="新建文件夹">
+              <a href="javascript:;" class="cancel">√</a>
+              <a href="javascript:;" class="sure">×</a>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 右键菜单 -->
+  <ul class="context-menu">
+    <li class="context-open">打开(O)</li>
+    <li class="context-download">下载</li>
+    <li class="to-device hover">推送到设备</li>
+    <li class="context-share">分享(S)</li>
+    <li class="context-copy">复制到</li>
+    <li class="context-move">移动到</li>
+    <li class="context-rename">重命名</li>
+    <li class="context-delete">删除</li>
+    <li>历史版本</li>
+  </ul>
+  <!-- 遮罩效果和树形结构弹窗 -->
+  <div class="shelter">
+    <div class="pop-box">
+      <div class="pop-header">
+        <p class="pop-close">X</p>
+      </div>
+      <div class="pop-container">
+        <div class="pop-tree">
+          <ul class="tree">
+          </ul>
+        </div>
+      </div>
+      <div class="pop-footer">
+        <div class="pop-createfile">新建文件夹</div>
+        <div class="pop-sure">确定</div>
+        <div class="pop-cancel">取消</div>
+      </div>
+    </div>
+  </div>
+  <!-- 右键小菜单 -->
+  <ul class="context-list">
+    <li class="list-view">查看(V)</li>
+    <li class="list-order">排列方式(O)</li>
+    <li class="list-refresh">刷新(E)</li>
+    <li class="list-reload">重新加载页面(R)</li>
+    <li class="list-createfile">新建文件夹</li>
+    <li>会员中心</li>
+  </ul>
+  <!-- 弹出提示框 -->
+  <div class="tips"></div>
+  <!-- 弹出选择框 -->
+  <div class="tip-window">
+    <div class="tip-shadow"></div>
+    <div class="tip-box">
+      <div class="tip-header">
+        <div class="tip-info">确认删除</div>
+        <div class="tip-close">X</div>
+      </div>
+      <div class="tip-container">
+        <span class="tip-text">删除后将无法恢复</span>
+        <div class="tip-nav">
+          <a class="tip-sure">确定</a>
+          <a class="tip-cancel">s</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/tool.js"></script>
+  <script src="./js/operation.js"></script>
+  <script src="./js/assist.js"></script>
+  <script src="./js/search.js"></script>
+  <script>
+    var container = document.querySelector('.body');
+    var data,para={},selected,pageNum = 'root';
+    var datauser = JSON.parse(localStorage.getItem('baiduyun')) ? JSON.parse(localStorage.getItem('baiduyun')) : user_data;
+    var maxId = datauser.maxId * 1;
+
+    //初始化-------------------------------------------------------------------
+    turnPage(pageNum);
+
+
+    //页面跳转函数//------------------------------------------------------------
+    function turnPage(pageNum) {
+
+        data = pageNum == 'root' ? datauser.files : getItemDataById(datauser, pageNum).children;
+      createFilesHtml(pageNum);
+      //刷新页面时检测被选中的文件夹数量
+      checkSelectfiles();
+      para.renameMark = false;
+      localStorage.setItem('baiduyun', JSON.stringify(datauser));
+    };
+
+    //右键菜单//-------------------------------------------------------------
+    var contxtMenu = document.querySelector('.context-menu');
+    //右键小菜单//-----------------------------------------------------------
+    var contextList = document.querySelector('.context-list');
+
+    //弹出右键菜单或者右键小菜单
+    container.addEventListener('contextmenu', function(e) {
+      if (!data[0].name) {
+        data.shift();
+      }
+      contextList.style.display = 'none';
+      contxtMenu.style.display = 'none';
+      e.preventDefault();
+      var target = e.target;
+      var parent = target.classList.contains('file-box') ? target : target.parentNode;
+      var children = parent.children;
+      var x = e.pageX,
+        y = e.pageY;
+      if (parent.dataset.select === 'false') {
+        for (var i = 0; i < container.children.length; i++) {
+          if (container.children[i] !== parent) {
+            container.children[i].classList.remove('active');
+            container.children[i].dataset.select = "false";
+            container.children[i].children[0].classList.remove('active');
+          }
+        }
+      };
+      if (target != container) {
+        var l = window.innerWidth - contxtMenu.offsetWidth,
+          t = window.innerHeight - contxtMenu.offsetHeight;
+        contxtMenu.style.display = 'block';
+        contxtMenu.style.left = `${l<x?l:x}px`;
+        contxtMenu.style.top = `${t<y?t:y}px`;
+        children[0].classList.add('active');
+        parent.classList.add('active');
+        parent.dataset.select = "true";
+        checkSelectfiles();
+      } else {
+        turnPage(pageNum);
+        var l = window.innerWidth - contextList.offsetWidth,
+          t = window.innerHeight - contextList.offsetHeight;
+        contextList.style.display = 'block';
+        contextList.style.left = `${l<x?l:x}px`;
+        contextList.style.top = `${t<y?t:y}px`;
+      };
+    });
+
+    //右键菜单对文件的操作
+    contxtMenu.addEventListener('mouseup', function(e) {
+      contxtMenu.style.display = 'none';
+    })
+    contxtMenu.addEventListener('click', function(e) {
+      var target = e.target,
+        targetCls = target.classList;
+      if (targetCls.contains('context-open')) {
+        if(para.renameMark) return;
+        if (checkSelectfiles().n > 1) {
+          popTips(false, '只能打开一个文件！');
+          return;
+        }
+        pageNum = checkSelectfiles().select[0];
+        turnPage(pageNum);
+      }
+      if (targetCls.contains('context-copy')) {
+        copyMoveTo();
+      }
+      if (targetCls.contains('context-delete')) {
+        if(para.renameMark) return;
+        tipboxDisplay('delete');
+      }
+      if (targetCls.contains('context-rename')) {
+        reName();
+      }
+      if (targetCls.contains('context-move')) {
+        copyMoveTo('move');
+      }
+    });
+    //右键小菜单的操作//---------------------------------------------------------
+
+    contextList.addEventListener('mouseup', function(e) {
+      contextList.style.display = 'none';
+    })
+    contextList.addEventListener('click', function(e) {
+      var target = e.target,
+        targetCls = target.classList;
+      if (targetCls.contains('list-refresh')) {
+        turnPage(pageNum);
+      }
+      if (targetCls.contains('list-reload')) {
+        turnPage('root');
+      }
+      if (targetCls.contains('list-createfile')) {
+        creatNewFiles();
+      }
+    });
+
+    //页面文件夹的单击事件//----------------------------------------------------
+    container.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var target = e.target;
+      var parent = target.classList.contains('file-box') ? target : target.parentNode;
+      if (target.classList.contains('circle') && !parent.children[3].classList.contains('active')) {
+        if (parent.dataset.select === "true") {
+          target.classList.remove('active');
+          parent.classList.remove('active');
+          parent.dataset.select = "false";
+        } else {
+          target.classList.add('active');
+          parent.classList.add('active');
+          parent.dataset.select = "true";
+        };
+        checkSelectfiles();
+      } else if (target.classList.contains('file-box') || target.classList.contains('file') || target.classList.contains('file-name')) {
+        if(para.renameMark) return;
+        pageNum = target.dataset.id != undefined ? target.dataset.id : parent.dataset.id;
+        turnPage(pageNum);
+      }
+    });
+  </script>
+</body>
+</html>
